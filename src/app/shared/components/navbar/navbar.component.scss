@@ -1,0 +1,27 @@
+:host ::ng-deep .p-menubar {
+  background: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-logo {
+  filter: invert(15%) sepia(90%) saturate(5000%) hue-rotate(270deg) brightness(80%);
+}
+
+.color {
+  color: rgb(69, 1, 133);
+}
+
+.nav-link {
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #f8f0ff;
+  }
+
+  &.active-link {
+    background-color: #f2e8fc;
+    color: #7e22ce;
+    font-weight: bold;
+  }
+}

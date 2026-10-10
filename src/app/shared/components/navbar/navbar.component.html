@@ -1,0 +1,23 @@
+<div class="card">
+  <p-menubar>
+    <ng-template pTemplate="start">
+      <figure class="my-1 mx-6">
+        <img class="w-3rem navbar-logo" src="../assets/imgs/logo.png" alt="">
+      </figure>
+    </ng-template>
+    <ng-template pTemplate="item" let-item let-root="root">
+
+    </ng-template>
+    <ng-template pTemplate="end">
+      <div class="flex align-items-center gap-2 pr-4">
+        @for (item of items; track $index) {
+        <a pRipple routerLinkActive="active-link" [routerLink]="[item?.['path']]"
+          class="nav-link p-menuitem-link p-link inline-flex justify-content-center align-items-center p-3 color">
+          <span [class]="item.icon"></span>
+          <span class="ml-2">{{ item.label }}</span>
+        </a>
+        }
+      </div>
+    </ng-template>
+  </p-menubar>
+</div>
