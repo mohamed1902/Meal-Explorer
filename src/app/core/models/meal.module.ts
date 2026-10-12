@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+export interface Meal {
+  idMeal: string;
+  strMeal: string;
+  strCategory: string;
+  strArea: string;
+  strInstructions: string;
+  strMealThumb: string;
+  strTags?: string;
+  strYoutube?: string;
+}
 
-
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
-export class MealModule { }
+export interface MealResponse {
+  meals: Meal[];
+}
