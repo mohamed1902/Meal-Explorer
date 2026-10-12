@@ -22,22 +22,22 @@ export class NavbarComponent {
       {
         label: 'Home',
         icon: 'pi pi-home',
-        path: 'home'
+        routerLink: 'home'
       },
       {
         label: 'Meals',
         icon: 'pi pi-compass',
-        path: 'meals'
+        routerLink: 'meals'
       },
       {
         label: 'Categories',
         icon: 'pi pi-th-large',
-        path: 'categories'
+        routerLink: 'categories'
       },
       {
         label: 'Favorites',
         icon: 'pi pi-heart',
-        path: 'favorites'
+        routerLink: 'favorites'
       }
     ];
   }
