@@ -1,1 +1,58 @@
-<p>home works!</p>
+<div class="relative flex align-items-center justify-content-center bg-cover bg-center bg-no-repeat"
+  style="background-image: url('../assets/imgs/img1.png'); height: 90vh;">
+  <div class="absolute top-0 left-0 w-full h-full bg-black-alpha-60"></div>
+
+  <div class="relative z-1 text-center px-4">
+    <h1 class="text-white text-5xl md:text-7xl font-bold mb-3 mt-0">Welcome to Meal Explorer</h1>
+    <p class="text-gray-300 text-xl md:text-2xl mb-5">Discover the most delicious recipes from around the world</p>
+    <p-button label="See All Meals" severity="secondary" icon="pi pi-arrow-down" (onClick)="scrollToMeals(mealsSection)"
+      styleClass="focus:shadow-none focus:outline-none" />
+  </div>
+</div>
+
+
+<section>
+  <div #mealsSection class="container-fluid mx-auto px-4">
+    <h2 class="text-color-secondary mb-4 text-3xl font-bold">All Meals</h2>
+
+    <div class="grid flex justify-content-around ">
+      @for (meal of meals; track meal.idMeal) {
+      <div class="col-12 md:col-6 lg:col-3 p-2">
+
+        <p-card
+          styleClass="shadow-2 hover:shadow-4 transition-all transition-duration-300 border-round-xl overflow-hidden h-full flex flex-column">
+
+          <ng-template pTemplate="header">
+            <img [src]="meal.strMealThumb" [alt]="meal.strMeal" class="w-full"
+              style="height: 220px; object-fit: cover;" />
+          </ng-template>
+
+          <div class="flex flex-column flex-grow-1">
+            <h3 class="text-xl font-bold text-900 mt-0 mb-2 text-overflow-ellipsis white-space-nowrap overflow-hidden"
+              [title]="meal.strMeal">
+              {{ meal.strMeal }}
+            </h3>
+
+            <div class="flex align-items-center gap-3 text-600 text-sm mb-3">
+              <span class="flex align-items-center gap-1">
+                <i class="pi pi-tag text-purple-500"></i> {{ meal.strCategory }}
+              </span>
+              <span class="flex align-items-center gap-1">
+                <i class="pi pi-map-marker text-purple-500"></i> {{ meal.strArea }}
+              </span>
+            </div>
+          </div>
+
+          <ng-template pTemplate="footer">
+            <p-button label="View Recipe" icon="pi pi-eye"
+              styleClass="w-full p-button-outlined p-button-secondary border-round-lg" />
+          </ng-template>
+
+        </p-card>
+
+      </div>
+      }
+    </div>
+  </div>
+
+</section>
