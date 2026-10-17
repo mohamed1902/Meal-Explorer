@@ -16,7 +16,7 @@
     <h2 class="text-color-secondary mb-4 text-3xl font-bold">Populer Meals</h2>
 
     <div class="grid flex justify-content-around ">
-      @for (meal of meals; track meal.idMeal) {
+      @for (meal of meals | slice: 0 : 10; track meal.idMeal) {
       <div class="col-12 md:col-6 lg:col-3 p-2">
 
         <p-card
