@@ -1,13 +1,13 @@
 <section>
   <div #mealsSection class="container-fluid mx-auto px-4">
-    <h2 class="title-page text-color-secondary mb-4 text-3xl font-bold">All Meals</h2>
+    <h2 class="title-page mb-4 text-3xl font-bold">All Meals</h2>
 
     <p-iconField iconPosition="right">
       <p-inputIcon styleClass="pi pi-search" />
       <input type="text" [(ngModel)]="searchKey" pInputText placeholder="Search" class="w-full" />
     </p-iconField>
 
-    <div class="grid flex justify-content-around mt-5">
+    <div class="grid flex justify-content-around mt-5 animate-fade-in">
       @for (meal of meals | search: searchKey; track meal.idMeal) {
       <div class="col-12 md:col-6 lg:col-3 p-2">
 

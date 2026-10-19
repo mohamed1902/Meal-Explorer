@@ -13,9 +13,9 @@
 
 <section>
   <div #mealsSection class="container-fluid mx-auto px-4">
-    <h2 class="text-color-secondary mb-4 text-3xl font-bold">Populer Meals</h2>
+    <h2 class="mb-4 text-3xl font-bold title-page">Populer Meals</h2>
 
-    <div class="grid flex justify-content-around ">
+    <div class="grid flex justify-content-around animate-fade-in">
       @for (meal of meals | slice: 0 : 10; track meal.idMeal) {
       <div class="col-12 md:col-6 lg:col-3 p-2">
 
