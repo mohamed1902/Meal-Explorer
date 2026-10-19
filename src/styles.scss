@@ -32,6 +32,14 @@ body {
   color: #7128b9 !important;
 }
 
+.p-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .container {
     max-width: 100%;
