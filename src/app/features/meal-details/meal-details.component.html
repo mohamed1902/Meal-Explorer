@@ -1,1 +1,82 @@
-<p>meal-details works!</p>
+@if (meal) {
+<section class="py-5">
+  <div class="container mx-auto px-4">
+    <div class="grid align-items-start justify-content-center">
+      <div class="col-12 md:col-5 fade-in-up delay-1">
+        <div class="surface-card p-3 border-round-2xl shadow-2">
+          <figure class="m-0 border-round-xl overflow-hidden mb-3">
+            <img class="w-full block border-round-xl" [src]="meal.strMealThumb" [alt]="meal.strMeal">
+          </figure>
+
+          <div class="flex flex-wrap gap-2 mb-3">
+            <p-tag [value]="meal.strCategory" severity="warning" icon="pi pi-bookmark" />
+            <p-tag [value]="meal.strArea" severity="info" icon="pi pi-globe" />
+            @if (meal.strTags) {
+            <p-tag [value]="meal.strTags" severity="success" icon="pi pi-tag" />
+            }
+          </div>
+
+          <div class="flex flex-column sm:flex-row gap-2 mt-3">
+            @if (meal.strYoutube) {
+            <a [href]="meal.strYoutube" target="_blank" class="no-underline w-full">
+              <p-button label="Watch Video" icon="pi pi-youtube" severity="danger" styleClass="w-full uppercase" />
+            </a>
+            }
+            @if (meal.strSource) {
+            <a [href]="meal.strSource" target="_blank" class="no-underline w-full">
+              <p-button label="Source" icon="pi pi-external-link" [outlined]="true" styleClass="w-full uppercase" />
+            </a>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 md:col-7">
+        <div class="content py-1 w-full">
+          <h1 class="text-3xl font-bold text-purple mt-0 mb-3 fade-in-up">{{ meal.strMeal }}</h1>
+          <div class="surface-card p-3 border-round-xl shadow-1 mb-4 fade-in-up delay-1">
+            <div
+              class="flex justify-content-between align-items-center capitalize border-bottom-1 surface-border pb-2 mb-2">
+              <p class="font-bold text-color-secondary my-0">Category:</p>
+              <p class="text-purple font-bold my-0">{{ meal.strCategory }}</p>
+            </div>
+            <div class="flex justify-content-between align-items-center capitalize">
+              <p class="font-bold text-color-secondary my-0">Area / Country:</p>
+              <p class="text-purple font-bold my-0">{{ meal.strArea }}</p>
+            </div>
+          </div>
+
+          <div class="surface-card p-3 border-round-xl shadow-1 mb-4 fade-in-up delay-2">
+            <p class="font-bold text-xl text-900 mt-0 mb-3 flex align-items-center gap-2">
+              <i class="pi pi-shopping-bag text-purple"></i> Ingredients & Measures
+            </p>
+            <div class="grid">
+              @for (item of ingredients; track $index) {
+              <div class="col-12 sm:col-6">
+                <div
+                  class="flex align-items-center gap-2 p-2 border-round-lg surface-ground ingredient-item cursor-pointer">
+                  <i class="pi pi-check-circle text-purple"></i>
+                  <div>
+                    <span class="font-bold block text-900 text-sm">{{ item.name }}</span>
+                    <span class="text-color-secondary text-xs">{{ item.measure }}</span>
+                  </div>
+                </div>
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="surface-card p-3 border-round-xl shadow-1 fade-in-up delay-3">
+            <p class="font-bold text-xl text-900 mt-0 mb-2 flex align-items-center gap-2">
+              <i class="pi pi-list text-purple"></i> Instructions
+            </p>
+            <p class="font-medium text-sm text-700 my-1 line-height-3 style-instructions">
+              {{ meal.strInstructions }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}

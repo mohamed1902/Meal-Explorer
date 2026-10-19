@@ -4,12 +4,13 @@ import { Meal } from '../../core/models/meal.model';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { SlicePipe } from '@angular/common';
+import { MenubarModule } from 'primeng/menubar';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule, CardModule, SlicePipe],
+  imports: [ButtonModule, CardModule, SlicePipe, MenubarModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

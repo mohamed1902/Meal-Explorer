@@ -45,7 +45,8 @@
 
           <ng-template pTemplate="footer">
             <p-button label="View Recipe" icon="pi pi-eye"
-              styleClass="w-full p-button-outlined p-button-secondary border-round-lg" />
+              styleClass="w-full p-button-outlined p-button-secondary border-round-lg"
+              [routerLink]="['/meal', meal.idMeal]" />
           </ng-template>
 
         </p-card>

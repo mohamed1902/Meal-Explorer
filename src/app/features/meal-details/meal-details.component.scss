@@ -1,0 +1,56 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.25s;
+}
+
+.delay-3 {
+  animation-delay: 0.4s;
+}
+
+.ingredient-item {
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid transparent;
+
+  &:hover {
+    transform: translateX(6px);
+    background-color: #f5eeff !important;
+    border-color: #e9d5ff;
+    box-shadow: 0 2px 8px rgba(106, 0, 212, 0.12);
+
+    i {
+      transform: scale(1.2);
+    }
+  }
+
+  i {
+    transition: transform 0.25s ease;
+  }
+}
+
+.text-purple {
+  color: #6a00d4 !important;
+}
+
+.style-instructions {
+  white-space: pre-line;
+}

@@ -8,11 +8,12 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../../core/pipes/search.pipe';
+import { MenubarModule } from 'primeng/menubar';
 
 @Component({
   selector: 'app-meals',
   standalone: true,
-  imports: [ButtonModule, CardModule, InputIconModule, IconFieldModule, InputTextModule, FormsModule, SearchPipe],
+  imports: [ButtonModule, CardModule, InputIconModule, IconFieldModule, InputTextModule, FormsModule, SearchPipe, MenubarModule],
   templateUrl: './meals.component.html',
   styleUrl: './meals.component.scss'
 })
